@@ -1,0 +1,8 @@
+```
+Power of Two My Submissions Question
+Total Accepted: 41037 Total Submissions: 124446 Difficulty: Easy
+Given an integer, write a function to determine if it is a power of two.
+
+Credits:
+Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
+```
