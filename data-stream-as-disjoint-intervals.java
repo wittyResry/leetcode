@@ -22,6 +22,7 @@ public class SummaryRanges {
         List<Interval> preN = new ArrayList<Interval>();
         List<Interval> postN = new ArrayList<Interval>();
         Interval cur = new Interval(val, val);
+        boolean tag = false;
         for (Interval interval : res) {
             if (cur.end + 1 == interval.start) {
                 cur.end = interval.end;
@@ -32,21 +33,29 @@ public class SummaryRanges {
             } else if (cur.start - 1 > interval.end) {
                 preN.add(interval);
             } else {
-                cur.start = Math.min(cur.start, interval.start);
-                cur.end = Math.max(cur.end, interval.end);
+                //Keep it in its original state
+                //release heap
+                preN.clear();
+                postN.clear();
+                cur = null;
+                return;
             }
         }
         List<Interval> tmp = new ArrayList<Interval>();
         for (Interval interval : preN) {
             tmp.add(interval);
         }
-        tmp.add(cur);
+        if (!tag) {
+            tmp.add(cur);
+        }
         for (Interval interval : postN) {
             tmp.add(interval);
         }
+        //release heap
         preN.clear();
         postN.clear();
         this.res.clear();
+        cur = null;
         this.res = tmp;
     }
 
