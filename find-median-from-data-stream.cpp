@@ -15,7 +15,7 @@ public:
     // Returns the median of current data stream
     double findMedian() {
         if (preHeap.size() == 0 && postHeap.size() == 0) return 0.0;
-        return postHeap.size() > preHeap.size() ? -1.0 * postHeap.top(): (preHeap.top() - postHeap.top()) / 2.0;
+        return postHeap.size() > preHeap.size() ? -1.0 * postHeap.top(): 0.5 * (preHeap.top() - postHeap.top());
     }
 private:
     priority_queue<int>preHeap, postHeap;
