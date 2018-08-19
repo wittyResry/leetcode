@@ -17,45 +17,48 @@
  */
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @author Qingyu Li
  * @since 2018/08/18
  */
 public class CourseScheduleII {
-    List<Integer>[] t;
+    List<Integer>[] g;
     int             in[];
-    boolean         vis[];
     int             res[];
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        t = new ArrayList[numCourses];
+        g = new ArrayList[numCourses];
         for (int i = 0; i < numCourses; ++i) {
-            t[i] = new ArrayList<>();
+            g[i] = new ArrayList<>();
         }
         in = new int[numCourses];
         for (int i = 0; i < prerequisites.length; ++i) {
             int u = prerequisites[i][1];
             int v = prerequisites[i][0];
-            t[u].add(v);
+            g[u].add(v);
             in[v]++;
         }
-        vis = new boolean[numCourses];
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < numCourses; ++i) {
+            if (in[i] == 0) {
+                queue.offer(i);
+            }
+        }
         res = new int[numCourses];
         for (int i = 0; i < numCourses; ++i) {
-            int k = -1;
-            for (int j = 0; j < numCourses; ++j) {
-                if (in[j] == 0 && !vis[j]) {
-                    k = j;
-                }
-            }
-            if (k == -1) {
+            if (queue.isEmpty()) {
                 return new int[0];
             }
-            vis[k] = true;
-            for (int j = 0; j < t[k].size(); ++j) {
-                --in[t[k].get(j)];
+            int k = queue.poll();
+            for (int j = 0; j < g[k].size(); ++j) {
+                int val = g[k].get(j);
+                if (--in[val] == 0) {
+                    queue.offer(val);
+                }
             }
             res[i] = k;
         }

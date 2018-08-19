@@ -17,7 +17,7 @@ public class CourseScheduleIITest {
         int[][] prerequisites = new int[4][2];
         prerequisites = JSON.parseObject("[[1,0],[2,0],[3,1],[3,2]]", new TypeReference<int[][]>() {
         });
-        int[] expected = JSON.parseObject("[0,2,1,3]", new TypeReference<int[]>() {
+        int[] expected = JSON.parseObject("[0,1,2,3]", new TypeReference<int[]>() {
         });
         int[] res = c.findOrder(4, prerequisites);
         for (int i = 0; i < expected.length; ++i) {
