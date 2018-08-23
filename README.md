@@ -24,6 +24,8 @@ egrep "(\([0-9]{3}\) ){1}[0-9]{3}-[0-9]{4}$|^([0-9]{3}-){2}[0-9]{4}$" file.txt
 * 图论题。输出DAG图判断是否有环，如果判断无环输出拓扑序列。每个边遍历一次，每个点遍历一次，故时间复杂度O(N*M)，空间复杂度为O(N*M)
 ### [211. 添加与搜索单词 - 数据结构设计](https://leetcode.com/problems/add-and-search-word-data-structure-design/description/)
 * 字典树+递归。每个单子每个节点至多遍历一次，时间复杂度O(N*len(word))，单词共享节点，空间复杂度O(N*len(word))
+### [212. 单词搜索 II](https://leetcode.com/problems/word-search-ii/description/)
+* 思路是dfs+字典树。但是解过程中，因为dir问题wa了很久，然后又遇到没有判断删除的次数，导致多删了。解决多删除的方法是用一个Map<String, Integer>计数即可。此题数据量不大，不用删除优化也能暴力解。复杂度建字典树复杂度+搜索复杂度。如果加动态删除字典树优化后，每个单子最多在图里面被搜索一次。所以整体复杂度是O(M*len(word)*SIZE(board))
 ### [345. 字符串反转](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
 * 刚开始考虑用substring，出现一次超时，先转charArray后处理
 ### [367. 判断是不是一个数的开方](https://leetcode.com/problems/valid-perfect-square/description/)
