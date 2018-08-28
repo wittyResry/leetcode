@@ -21,43 +21,27 @@ import java.util.List;
 
 /**
  * @author Qingyu Li
- * @since 2018/08/26
+ * @since 2018/08/28
  */
-@Deprecated
-public class BinaryTreeLevelOrderTraversal {
+public class BinaryTreeLevelOrderTraversalSolve3 {
+
     public List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null) {
-            return new ArrayList<>();
-        }
-        int high = getHigh(root);
-        Integer[] v1 = new Integer[1 << high];
-        dfs(v1, 1, root);
-        //无法AC，原因为超过65535
         List<List<Integer>> res = new ArrayList<>();
-        for (int i = 0; i < high; ++i) {
-            List<Integer> t = new ArrayList<>();
-            for (int j = 0; j < (1 << i); ++j) {
-                int idx = (i > 0 ? (1 << i) - 1: 0) + j;
-                if (v1[1 + idx] != null) {
-                    t.add(v1[1 + idx]);
-                }
-            }
-            res.add(t);
-        }
+        dfs(res, root, 0);
         return res;
     }
 
-    private void dfs(Integer[] v1, int idx, TreeNode root) {
+    private void dfs(List<List<Integer>> res, TreeNode root, int deep) {
+
         if (root == null) {
             return;
         }
-        v1[idx] = root.val;
-        dfs(v1, 2 * idx, root.left);
-        dfs(v1, 2 * idx + 1, root.right);
-    }
-
-    private int getHigh(TreeNode root) {
-        return root == null ? 0 : 1 + Integer.max(getHigh(root.left), getHigh(root.right));
+        if (deep >= res.size()) {
+            res.add(new ArrayList<>());
+        }
+        res.get(deep).add(root.val);
+        dfs(res, root.left, deep + 1);
+        dfs(res, root.right, deep + 1);
     }
 
     public static class TreeNode {

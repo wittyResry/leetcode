@@ -1,5 +1,7 @@
 ### [101. 对称二叉树](https://leetcode.com/problems/symmetric-tree/description/)
 * 对树进行左右节点交换。注意null不能作为函数传入值。遍历树的复杂度: O(N),空间复杂度：O(N)
+### [102. 二叉树的层次遍历](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
+* dfs或者bfs，效率dfs更快一些，时间复杂度均为O(N)，dfs空间复杂度为栈的深度，bfs空间复杂度为O(N)
 ### [193. grep正则表达式](https://leetcode.com/problems/valid-phone-numbers/description/)
 * grep思路比较，但是用sed -nr也能实现此功能，并且sed还能替换整个文本中的字符，用处较广
 ```sh
