@@ -4,8 +4,10 @@
 * dfs或者bfs，效率dfs更快一些，时间复杂度均为O(N)，dfs空间复杂度为栈的深度，bfs空间复杂度为O(N)
 ### [103. 二叉树的锯齿形层次遍历](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/)
 * dfs即可，同上，O(N)时间复杂度
-###n[104. 二叉树的最大深度](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
+### [104. 二叉树的最大深度](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
 * dfs，同上，O(N)时间复杂
+### [107. 二叉树的层次遍历 II](https://leetcode.com/submissions/detail/172700470/)
+* 先求出最大深度，然后遍历方式做下优化即可，时间复杂度均为O(N)，dfs空间复杂度为栈的深度
 ### [193. grep正则表达式](https://leetcode.com/problems/valid-phone-numbers/description/)
 * grep思路比较，但是用sed -nr也能实现此功能，并且sed还能替换整个文本中的字符，用处较广
 ```sh
