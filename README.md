@@ -5,6 +5,8 @@
 ### [103. 二叉树的锯齿形层次遍历](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/)
 * dfs即可，同上，O(N)时间复杂度
 ### [104. 二叉树的最大深度](https://leetcode.com/problems/maximum-depth-of-binary-tree/description/)
+### [105. 从前序与中序遍历序列构造二叉树](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/)
+* 递归，找到根节点，时间复杂度O(N)，空间复杂度O(N)
 * dfs，同上，O(N)时间复杂
 ### [107. 二叉树的层次遍历 II](https://leetcode.com/submissions/detail/172700470/)
 * 先求出最大深度，然后遍历方式做下优化即可，时间复杂度均为O(N)，dfs空间复杂度为栈的深度
