@@ -16,6 +16,8 @@
 * 先构造出树，再采用二叉树中序遍历，复杂度O(N)，空间复杂度O(N)
 ### [109. 有序链表转换二叉搜索树](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/)
 * 有序链表转为二叉搜索树，时间复杂度O(N)，空间复杂度O(N)
+### [110. 检查一个树是否平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+* 首先递归计算每个节点作为子树的高度，然后按照平衡二叉树定义，递归判断左子树和右子树高度差不超过1.
 ### [193. grep正则表达式](https://leetcode.com/problems/valid-phone-numbers/description/)
 * grep思路比较，但是用sed -nr也能实现此功能，并且sed还能替换整个文本中的字符，用处较广
 ```sh

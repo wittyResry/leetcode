@@ -1,4 +1,4 @@
-import org.apache.commons.lang.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,7 +21,7 @@ public class CourseScheduleIITest {
         });
         int[] res = c.findOrder(4, prerequisites);
         for (int i = 0; i < expected.length; ++i) {
-            Assert.assertEquals(ReflectionToStringBuilder.toString(res), expected[i], res[i]);
+            Assert.assertEquals(ToStringBuilder.reflectionToString(res), expected[i], res[i]);
         }
     }
 }
