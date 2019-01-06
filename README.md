@@ -17,7 +17,9 @@
 ### [109. 有序链表转换二叉搜索树](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/)
 * 有序链表转为二叉搜索树，时间复杂度O(N)，空间复杂度O(N)
 ### [110. 检查一个树是否平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
-* 首先递归计算每个节点作为子树的高度，然后按照平衡二叉树定义，递归判断左子树和右子树高度差不超过1.
+* 首先递归计算每个节点作为子树的高度，然后按照平衡二叉树定义，递归判断左子树和右子树高度差不超过1，时间和空间复杂度O(N)
+### [111. 二叉树的最小深度](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/)
+* 递归计算子树最矮高度，时间复杂度O(N)，空间复杂度O(N)
 ### [193. grep正则表达式](https://leetcode.com/problems/valid-phone-numbers/description/)
 * grep思路比较，但是用sed -nr也能实现此功能，并且sed还能替换整个文本中的字符，用处较广
 ```sh
@@ -50,3 +52,7 @@ egrep "(\([0-9]{3}\) ){1}[0-9]{3}-[0-9]{4}$|^([0-9]{3}-){2}[0-9]{4}$" file.txt
 * 刚开始考虑用substring，出现一次超时，先转charArray后处理
 ### [367. 判断是不是一个数的开方](https://leetcode.com/problems/valid-perfect-square/description/)
 * 直接用二分应该是log(n)的复杂度，然后特判一下left和right的边界，保证没有遗漏的情况
+### [504. 七进制数](https://leetcode.com/problems/base-7/submissions/)
+* 整数转7进制数，时间复杂度O(logN)，空间复杂度O(logN)
+### [784. 字母大小写全排列](https://leetcode.com/problems/letter-case-permutation)
+* dfs, 时间复杂度O(调用栈栈深度), 空间复杂度(调用栈深度)
