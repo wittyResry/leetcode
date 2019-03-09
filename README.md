@@ -1,3 +1,9 @@
+### [3. 无重复字符的最长子串](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+* 字符串处理滑动窗口，定义[i,j) 左闭右开，可以向左右滑动。那么就可将复杂度大大降低，从O(N^3)下降到O(2*N)，原因为每个index扫过i和j各一次。时间复杂度O(N)，空间复杂度O(N).
+* 优化滑动窗口，就是将一边不是一个一个加，是跳跃者加（容易想起跳跃表），那么就可以将复杂度的常量继续下降.
+* 注意边界的处理.
+### [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/)
+* 回文对称性，枚举中心节点的方式来处理，复杂度O(N^2)，空间复杂度O(1)
 ### [53. 最大子序和](https://leetcode.com/problems/problems/maximum-subarray/description/)
 * 动态规划，最大子段和。定义好“相邻”的动态规划方程。时间复杂度O(N), 空间复杂度O(N)
 ### [70. 爬楼梯](https://leetcode.com/problems/climbing-stairs/description/)
@@ -24,6 +30,8 @@
 * 首先递归计算每个节点作为子树的高度，然后按照平衡二叉树定义，递归判断左子树和右子树高度差不超过1，时间和空间复杂度O(N)
 ### [111. 二叉树的最小深度](https://leetcode.com/problems/minimum-depth-of-binary-tree/submissions/)
 * 递归计算子树最矮高度，时间复杂度O(N)，空间复杂度O(N)
+### [114. 二叉树展开为链表](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/)
+* 递归题目，先递归处理左子树，再处理右边子树。把左子树（flatten后的）接在root后并把左边设置为null，然后挪到最后，再将右子树（flatten后的）接在末尾。时间复杂度O(N),空间复杂度:O(1)
 ### [193. grep正则表达式](https://leetcode.com/problems/valid-phone-numbers/description/)
 * grep思路比较，但是用sed -nr也能实现此功能，并且sed还能替换整个文本中的字符，用处较广
 ```sh
