@@ -1,3 +1,5 @@
+#include<cstdio>
+#include<cstring>
 const int M = 105;
 class Solution {
 public:
@@ -30,3 +32,8 @@ public:
         return f[m][n];
     }
 };
+int main() {
+    Solution solution;
+    printf("%d\n", solution.uniquePaths(5,2));
+
+}
