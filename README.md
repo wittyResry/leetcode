@@ -2,8 +2,22 @@
 * 字符串处理滑动窗口，定义[i,j) 左闭右开，可以向左右滑动。那么就可将复杂度大大降低，从O(N^3)下降到O(2*N)，原因为每个index扫过i和j各一次。时间复杂度O(N)，空间复杂度O(N).
 * 优化滑动窗口，就是将一边不是一个一个加，是跳跃者加（容易想起跳跃表），那么就可以将复杂度的常量继续下降.
 * 注意边界的处理.
+### [4. 两个数组取中位数](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+* 二分复杂的O(n+m)，要求复杂度log，i为数组nums1的分割，分割为nums1[i-1]和nums1[i];j为nums2的分割，分类讨论：
+case1: m+n长度为偶数：
+i + j = m - i + n - j
+j = (m + n) / 2 - i
+中位数为：(max(A[i-1],B[j-1]) + min(A[i],B[j]))/2
+case2: m+n长度为奇数，定义左半部分比右半部分多1：
+i + j = m - i  + n - j + 1
+j = (m + n + 1) / 2 - i
+中位数为：max(A[i-1], B[j-1])
 ### [5. 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/solution/)
 * 回文对称性，枚举中心节点的方式来处理，复杂度O(N^2)，空间复杂度O(1)
+### [6. Z字形](https://leetcode-cn.com/problems/zigzag-conversion/) 
+* 模拟题，时间复杂度: O(N)
+### [8. 字符串转换整数 (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
+* 考虑超过限制的情况，读题很重要。复杂度O(N)
 ### [53. 最大子序和](https://leetcode.com/problems/problems/maximum-subarray/description/)
 * 动态规划，最大子段和。定义好“相邻”的动态规划方程。时间复杂度O(N), 空间复杂度O(N)
 ### [70. 爬楼梯](https://leetcode.com/problems/climbing-stairs/description/)
